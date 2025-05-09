@@ -1,0 +1,14 @@
+{
+    "$schema": "../../.sitecore/schemas/ModuleFile.schema.json",
+    "namespace": "demopublishingsitecollectioncontent",
+    "items": {
+        "includes": [
+            {
+                "name": "content-root",
+                "path": "/sitecore/content/Bokus/Publishing Demo/PubDemo1",
+                "allowedPushOperations": "CreateUpdateAndDelete",
+                "scope": "itemAndDescendants"
+            }
+        ]
+    }
+}
