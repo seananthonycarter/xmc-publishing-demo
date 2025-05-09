@@ -1,4 +1,7 @@
 {
+    "deployItems": {
+      "modules": ["demopublishingsitecollection.*"]
+    },
     "renderingHosts": {
       "nextjsstarter": {
         "path": "./headapps/nextjs-starter",
