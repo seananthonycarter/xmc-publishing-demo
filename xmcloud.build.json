@@ -1,6 +1,6 @@
 {
     "deployItems": {
-      "modules": ["demopublishingsitecollection.*"]
+      "modules": ["demopublishingsitecollection", "demopublishingsitecollectioncontent"]
     },
     "renderingHosts": {
       "nextjsstarter": {
