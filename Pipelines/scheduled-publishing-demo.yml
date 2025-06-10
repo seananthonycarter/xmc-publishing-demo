@@ -4,13 +4,22 @@ trigger:
 pool:
   vmImage: windows-2022
 
+schedules:
+- cron: "30 13 * * *"
+  displayName: Publish every day at 1:15 PM UTC,
+  branches:
+    include:
+    - main
+  always: true
+
 steps:
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
     script: |
-      Write-Host "About to install..."
-      dotnet new tool-manifest
-      dotnet nuget add source -n Sitecore https://nuget.sitecore.com/resources/v3/index.json
-      dotnet tool install Sitecore.CLI   
-      Write-Host "Completed installation..."
+      Write-Host "About to publish..."
+       Write-Host "About to publishing..."
+      #dotnet new tool-manifest
+      #dotnet nuget add source -n Sitecore https://nuget.sitecore.com/resources/v3/index.json
+      #dotnet tool install Sitecore.CLI   
+      Write-Host "Publish completed"
