@@ -18,6 +18,7 @@ steps:
     targetType: 'inline'
     script: |
       Write-Host "About to publish"
+      dotnet tool restore
       dotnet sitecore login --authority  https://auth.sitecorecloud.io --cm $(instance-url) --audience https://api.sitecorecloud.io --allow-write true --client-credentials true --client-id $(client-id) --client-secret $(client-secret)
       dotnet sitecore publish --environment-name default item --path "/sitecore/content/Demo Headless Site Collection Folder/Demo Site Collection/Demo Site/Home"
       Write-Host "Publish completed"
