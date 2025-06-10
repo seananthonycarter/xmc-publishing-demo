@@ -5,18 +5,19 @@ pool:
   vmImage: windows-2022
 
 schedules:
-- cron: "55 13 10 6 * "
-  displayName: Publish today at 13:45 PM UTC,
+- cron: "55 15 10 6 * "
+  displayName: Publish today at 15:55 PM UTC,
   branches:
     include:
     - main
   always: true
 
 steps:
-- script: echo Hello, world.....
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Host "About to publish"
+      dotnet sitecore login --authority  https://auth.sitecorecloud.io --cm $(instance-url) --audience https://api.sitecorecloud.io --allow-write true --client-credentials true --client-id $(client-id) --client-secret $(client-secret)
+      dotnet sitecore publish --environment-name default item --path "/sitecore/content/Demo Headless Site Collection Folder/Demo Site Collection/Demo Site/Home"
+      Write-Host "Publish completed"
