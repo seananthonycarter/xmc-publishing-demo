@@ -2,20 +2,18 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-2022
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: Perform publish
+  displayName: 'Perform publish as specified'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
     script: |
-      # Write your PowerShell commands here.
-      
-      Write-Host "Hello World again"
+      Write-Host "About to install..."
+      dotnet new tool-manifest
+      dotnet nuget add source -n Sitecore https://nuget.sitecore.com/resources/v3/index.json
+      dotnet tool install Sitecore.CLI   
+      Write-Host "Completed installation..."
