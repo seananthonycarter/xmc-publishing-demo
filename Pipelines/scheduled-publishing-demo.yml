@@ -5,8 +5,8 @@ pool:
   vmImage: windows-2022
 
 schedules:
-- cron: "55 15 10 6 * "
-  displayName: Publish today at 15:55 PM UTC,
+- cron: "00 16 10 6 * "
+  displayName: Publish today at 16:00 PM UTC,
   branches:
     include:
     - main
