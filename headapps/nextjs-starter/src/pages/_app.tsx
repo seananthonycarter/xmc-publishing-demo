@@ -19,9 +19,11 @@ function App({ Component, pageProps }: AppProps<SitecorePageProps>): JSX.Element
         // If your app is not multilingual, next-localization and references to it can be removed.
       */}
       <I18nProvider lngDict={dictionary} locale={pageProps.locale}>
+        <>
         <CustomScripts locale={pageProps.locale} />
         <GTMNoscript />
         <Component {...rest} />
+        </>
       </I18nProvider>
     </>
   );
