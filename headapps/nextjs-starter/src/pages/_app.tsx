@@ -2,10 +2,10 @@ import type { AppProps } from 'next/app';
 import { I18nProvider } from 'next-localization';
 import { SitecorePageProps } from 'lib/page-props';
 import Bootstrap from 'src/Bootstrap';
-//import CustomScripts from 'components/CustomScript';
-//import GTMNoscript from 'components/GTMNoscript';
+import CustomScripts from 'components/CustomScript';
+import GTMNoscript from 'components/GTMNoscript';
 import useDataLayer from '../hooks/useDataLayer';
-import { GoogleAnalytics } from '@next/third-parties/google';
+//import { GoogleAnalytics } from '@next/third-parties/google';
 
 import 'assets/main.scss';
 
@@ -20,12 +20,13 @@ function App({ Component, pageProps }: AppProps<SitecorePageProps>): JSX.Element
         // Use the next-localization (w/ rosetta) library to provide our translation dictionary to the app.
         // Note Next.js does not (currently) provide anything for translation, only i18n routing.
         // If your app is not multilingual, next-localization and references to it can be removed.
-        <CustomScripts locale={pageProps.locale} />
-        <GTMNoscript />
+        <GoogleAnalytics gaId="G-KZ67Y8685K" />
+       
       */}
       <I18nProvider lngDict={dictionary} locale={pageProps.locale}>
         <>
-        <GoogleAnalytics gaId="G-KZ67Y8685K" />
+        <CustomScripts locale={pageProps.locale} />
+        <GTMNoscript />
         <Component {...rest} />
         </>
       </I18nProvider>
