@@ -6,7 +6,7 @@
       // Initialize the data layer with global data
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-        event: 'page_view',
+        event: 'PageView',
         page: {
           title: "Page title",  /*pageProps?.layoutData?.sitecore?.route.displayName,*/
           url: window.location.href,
