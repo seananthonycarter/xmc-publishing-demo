@@ -8,7 +8,7 @@
       window.dataLayer.push({
         event: 'pageview',
         page: {
-          title: pageProps?.layoutData?.sitecore?.route.displayName,
+          title: "Page title",  /*pageProps?.layoutData?.sitecore?.route.displayName,*/
           url: window.location.href,
           id: sitecorePageProps.layoutData?.sitecore?.route.itemId,
           locale: sitecorePageProps.locale,
@@ -20,12 +20,12 @@
 
   export default useDataLayer;
 
-    const trackButtonClick = (buttonName) => {
-    window.dataLayer.push({
-      event: 'button_click',
-      button: {
-        name: buttonName,
-      },
-    });
-  };
+ //   const trackButtonClick = (buttonName) => {
+ //   window.dataLayer.push({
+ //     event: 'button_click',
+ //     button: {
+ //       name: buttonName,
+ //     },
+ //   });
+ // };
 
