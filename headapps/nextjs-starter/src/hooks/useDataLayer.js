@@ -8,7 +8,7 @@
       window.dataLayer.push({
         event: 'page_view',
         page: {
-          title: "Page title",  /*pageProps?.layoutData?.sitecore?.route.displayName,*/
+          title: sitecorePageProps?.layoutData?.sitecore?.route.name,
           url: window.location.href,
           id: sitecorePageProps.layoutData?.sitecore?.route.itemId,
           locale: sitecorePageProps.locale,
