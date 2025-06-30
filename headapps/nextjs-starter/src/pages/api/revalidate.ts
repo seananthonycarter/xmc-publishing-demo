@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-export default async function handler(req: any, res: any) {
+export default async function handler(req, res) {
     console.log(`[revalidation]: Start. Request: ${JSON.stringify(req.body)}`);
 
     if (req.query.secret !== process.env.ISR_REVALIDATE_TOKEN) {
